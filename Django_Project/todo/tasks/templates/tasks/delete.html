@@ -1,0 +1,137 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Roboto+Condensed&display=swap');
+  *{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+  }
+p{
+  color:aqua;
+}
+body{
+	   background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+	}
+
+ .center-column{
+  
+  background-image: radial-gradient( circle 929px at 0.6% 1.3%,  rgba(248,251,10,1) 0%, rgba(248,47,47,1) 82.6% );
+  background-image: linear-gradient( 109.6deg, #9C27B0 11.2%, rgba(219,132,184,1) 91.1% );
+     display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+		width:50%;
+    height:400px;
+		margin:90px  auto;
+		padding:20px;
+		background-color: #fff;
+		border-radius: 3px;
+		box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+	}
+  .text{
+    color: #00ffdc;
+    margin:20px;
+    padding:20px;
+    font-size:25px;
+    font-weight:700;
+    font-family: 'Roboto Condensed', sans-serif;
+
+  }
+  
+  .btn-grad {background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%)}
+         .btn-grad {
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            outline: none;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+            outline: none;
+          }
+
+
+          .btn-grad2 {background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC  51%, #02AAB0  100%)}
+         .btn-grad2 {
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+          }
+
+          .btn-grad2:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+                  
+.buttons{
+  display:flex;
+
+}
+.btn{
+  background-image: linear-gradient( 109.6deg,  rgba(102,203,149,1) 11.2%, rgba(39,210,175,1) 98.7% );
+  color: #fff;
+  font-size: 24px;
+  padding:10px;
+  margin:50px;
+  position: relative;
+    left: -60px;
+    top: -37px;
+    width: 140px;
+    height: 58px;
+}
+.btn:hover{
+  color:#fff;
+}
+
+.span{
+  background: yellow;
+  color: #ff18a3;
+    font-size: 25px;
+    font-weight: bold;
+}
+</style>
+
+<div class="center-column">
+
+  <div><p class="text">Your task <span class="span"> "{{item}}"</span>  will be deleted from your todo list :</p></div>
+ <div class="buttons">
+
+ 
+  <a class="btn" href="{% url 'list' %}">Go Back</a>
+
+  
+
+  <form method="POST">
+  {% csrf_token %}
+
+   <button class="btn-grad" type="submit" name="Confirm" >Delete</button>
+ 
+  </form>
+
+
+</div>
+  
+
+</div>
